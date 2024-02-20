@@ -1,6 +1,11 @@
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+from jinja2 import Template
+import datetime
 
+def format_date_joined():
+        now = datetime.datetime.now() 
+        return ("Joined " + now.strftime("%B, %Y"))
 
 ###
 # Routing for your application.
@@ -17,6 +22,9 @@ def about():
     """Render the website's about page."""
     return render_template('about.html', name="Mary Jane")
 
+@app.route('/profile')
+def profile():    
+    return render_template('profile.html', format_date_joined=format_date_joined)    
 
 ###
 # The functions below should be applicable to all Flask apps.

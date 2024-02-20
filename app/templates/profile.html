@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+
+{% block main %}
+
+<div class="card">
+    <img src= "{{url_for('static', filename='profilepic3.png')}}" alt="Profile Picture" class="image"/>
+    <div class="container">
+        <h1>Lenesia Brown</h1>
+        <div class="section1">
+            <p>@lbrown</p>
+            <p>Kingston, Jamaica</p>
+            <p>{{ format_date_joined() }}</p>
+        </div>
+   
+        <div class="section2">
+            <p>Enthusiastic web designer with an excellent sense of design and usability. Putting 
+                a strong emphasis on user experience and modern design principles, my goal is to build 
+                visually stunning and easily navigable websites that make an impact. Together, let's make 
+                your idea a reality in the digital world.</p>
+        </div>    
+        <div class="parent"> 
+            <div class="child"> <p> <b>10</b> <br> Posts</p> </div>
+            <div class="child"> <p> <b>125</b> <br> Following</p> </div>
+            <div class="child"> <p> <b>1250</b> <br> Followers</p> </div>
+        </div>
+        <div class="parenta"> <button type="button">Follow</button> </div>
+    </div>
+</div>
+
+{% endblock %}
